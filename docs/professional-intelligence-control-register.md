@@ -54,7 +54,10 @@ As of 2026-04-29:
 - `SocioProphet/policy-fabric#34`: Professional Policy Decision schema and examples.
 - `SocioProphet/contractforge#4`: Obligation Ledger examples and validation.
 - `SocioProphet/global-devsecops-intelligence#10`: governance and control-plane assessment.
-- `SocioProphet/prophet-platform-fabric-mlops-ts-suite#31`: naming consistency cleanup.
+
+## Out-of-scope for this wave
+
+- `SocioProphet/prophet-platform-fabric-mlops-ts-suite` remains out of scope for this Professional Intelligence OS alignment wave. Profit/trading-bot naming in that repo is intentional and must not be treated as SocioProphet naming drift.
 
 ## Hygiene rules
 
@@ -63,7 +66,7 @@ As of 2026-04-29:
 3. Every PR states validation, evidence, and downstream impact.
 4. Demo credit requires evidence and adoption telemetry paths.
 5. Use the available environments before adding repos.
-6. Use `SocioProphet` consistently across public and operator-facing surfaces.
+6. Use `SocioProphet` consistently across public and operator-facing surfaces, while preserving intentional Profit/trading-bot naming in out-of-scope repos.
 
 ## Gates
 
