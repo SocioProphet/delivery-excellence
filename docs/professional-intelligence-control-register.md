@@ -8,12 +8,12 @@ This register is the DelEx control surface for the current Professional Intellig
 
 As of 2026-05-05:
 
-- Overall alignment: 60%
+- Overall alignment: 64%
 - Architecture spine: 40%
 - DelEx governance: 48%
 - DelEx automation: 45%
 - Platform contracts: 45%
-- Governed execution substrate: 60%
+- Governed execution substrate: 65%
 - Evidence Plane: 55%
 - Workspace, search, and query surface: 45%
 - UI and dashboard integration: 38%
@@ -21,11 +21,11 @@ As of 2026-05-05:
 - Policy Fabric integration: 45%
 - ContractForge / Obligation Ledger integration: 45%
 - Institution Context Engine: 55%
-- Governance loops: 48%
-- Cybernetic controls: 42%
+- Governance loops: 50%
+- Cybernetic controls: 45%
 - Playbooks: 35%
-- Runtime implementation: 25%
-- Demo readiness: 60%
+- Runtime implementation: 35%
+- Demo readiness: 65%
 
 ## Current PR wave
 
@@ -46,7 +46,7 @@ As of 2026-05-05:
 - `SocioProphet/model-router#10`: merged. Routing decision schema, examples, validation, and docs. Superseded conflicted PR #9.
 - `SocioProphet/guardrail-fabric#10`: merged. Runtime-control pack schema, six-rule example, validation, and docs.
 - `SocioProphet/model-governance-ledger#10`: merged. Model/action evidence records, route evidence, promotion candidate, rollback-ready record, and ledger cross-reference validation.
-- `SocioProphet/agentplane#73`: open and blocked by required `lint` status. Workflow bundle is staged but not merged.
+- `SocioProphet/agentplane#73`: merged. Professional Intelligence workflow bundle, host smoke, VM smoke, and workflow-step/run/replay artifact emission path.
 
 ## Current work orders
 
@@ -56,7 +56,7 @@ As of 2026-05-05:
 - `SocioProphet/delivery-excellence-innersource#6`: completed. Playbook linting.
 - `SocioProphet/delivery-excellence-boards#5`: program board lanes and rollup.
 - `SocioProphet/prophet-workspace#8`: completed. Workroom contract and fixture.
-- `SocioProphet/agentplane#72`: blocked by Agentplane PR #73 required `lint` status.
+- `SocioProphet/agentplane#72`: completed. Workflow bundle and evidence mapping.
 - `SocioProphet/agent-registry#5`: completed. Agent specs and tool grants.
 - `SocioProphet/model-router#5`: completed. Routing policy examples.
 - `SocioProphet/guardrail-fabric#6`: completed. Guardrail pack.
@@ -80,14 +80,14 @@ As of 2026-05-05:
 4. Demo credit requires evidence and adoption telemetry paths.
 5. Use the available environments before adding repos.
 6. Use `SocioProphet` consistently across public and operator-facing surfaces, while preserving intentional Profit/trading-bot naming in out-of-scope repos.
-7. Do not force-merge around branch protection. Agentplane remains blocked until its required `lint` status is reported or repaired.
+7. Do not force-merge around branch protection. Stale blocker states must be corrected in the register when GitHub state changes.
 
 ## Gates
 
 Gate 1: merge alignment docs and seed contracts. Target overall: 25%. Status: complete.
 
-Gate 2: add validation fixtures. Target overall: 32%. Status: complete for platform, DelEx automation, playbooks, workrooms, policy decisions, obligations, search packets, context packs, context queries, routing decisions, guardrail packs, and evidence ledger records.
+Gate 2: add validation fixtures. Target overall: 32%. Status: complete for platform, DelEx automation, playbooks, workrooms, policy decisions, obligations, search packets, context packs, context queries, routing decisions, guardrail packs, evidence ledger records, and Agentplane bundle validation paths.
 
-Gate 3: create runnable demo slice. Target overall: 45%. Status: substantially complete but not fully merged end-to-end. Remaining blocker: Agentplane workflow bundle PR #73 required `lint` status. Remaining strengthening work: governance/control-plane assessment and board rollup.
+Gate 3: create runnable demo slice. Target overall: 45%. Status: complete as a recordable slice. Agentplane bundle, context/query/search/memory, policy/obligation, route decision, guardrail, model-governance, workroom, and adoption/evidence surfaces now exist.
 
-Gate 4: produce first integrated demo. Target overall: 60%. Status: ready to enter once Agentplane bundle merges. Required next: Agentplane bundle merge, then demo orchestration across playbook -> context query -> policy/obligation check -> route decision -> guardrail check -> Agentplane run -> workroom/evidence/adoption output.
+Gate 4: produce first integrated demo. Target overall: 60%. Status: active. Required next: demo orchestration across playbook -> context query -> policy/obligation check -> route decision -> guardrail check -> Agentplane run -> workroom/evidence/adoption output.
