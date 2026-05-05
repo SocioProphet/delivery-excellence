@@ -6,14 +6,15 @@ This register is the DelEx control surface for the current Professional Intellig
 
 ## Completion readout
 
-As of 2026-05-04:
+As of 2026-05-05:
 
-- Overall alignment: 57%
+- Overall alignment: 60%
 - Architecture spine: 40%
 - DelEx governance: 48%
 - DelEx automation: 45%
 - Platform contracts: 45%
-- Governed execution substrate: 56%
+- Governed execution substrate: 60%
+- Evidence Plane: 55%
 - Workspace, search, and query surface: 45%
 - UI and dashboard integration: 38%
 - Sociosphere topology integration: 40%
@@ -24,7 +25,7 @@ As of 2026-05-04:
 - Cybernetic controls: 42%
 - Playbooks: 35%
 - Runtime implementation: 25%
-- Demo readiness: 58%
+- Demo readiness: 60%
 
 ## Current PR wave
 
@@ -44,6 +45,7 @@ As of 2026-05-04:
 - `SocioProphet/prophet-core-query#4`: merged. Context query schema, example, validation, and CI wiring.
 - `SocioProphet/model-router#10`: merged. Routing decision schema, examples, validation, and docs. Superseded conflicted PR #9.
 - `SocioProphet/guardrail-fabric#10`: merged. Runtime-control pack schema, six-rule example, validation, and docs.
+- `SocioProphet/model-governance-ledger#10`: merged. Model/action evidence records, route evidence, promotion candidate, rollback-ready record, and ledger cross-reference validation.
 - `SocioProphet/agentplane#73`: open and blocked by required `lint` status. Workflow bundle is staged but not merged.
 
 ## Current work orders
@@ -59,7 +61,7 @@ As of 2026-05-04:
 - `SocioProphet/model-router#5`: completed. Routing policy examples.
 - `SocioProphet/guardrail-fabric#6`: completed. Guardrail pack.
 - `SocioProphet/memory-mesh#11`: completed. Scoped context-pack support.
-- `SocioProphet/model-governance-ledger#6`: pending. Model and action evidence examples.
+- `SocioProphet/model-governance-ledger#6`: completed. Model and action evidence examples.
 - `SocioProphet/sherlock-search#19`: completed. Search packet contract and fixture.
 - `SocioProphet/prophet-core-query#2`: completed. Query contract for context inputs.
 - `SocioProphet/policy-fabric#34`: completed. Professional Policy Decision schema and examples.
@@ -84,8 +86,8 @@ As of 2026-05-04:
 
 Gate 1: merge alignment docs and seed contracts. Target overall: 25%. Status: complete.
 
-Gate 2: add validation fixtures. Target overall: 32%. Status: complete for platform, DelEx automation, playbooks, workrooms, policy decisions, obligations, search packets, context packs, context queries, routing decisions, and guardrail packs.
+Gate 2: add validation fixtures. Target overall: 32%. Status: complete for platform, DelEx automation, playbooks, workrooms, policy decisions, obligations, search packets, context packs, context queries, routing decisions, guardrail packs, and evidence ledger records.
 
-Gate 3: create runnable demo slice. Target overall: 45%. Status: substantially complete but not fully merged end-to-end. Remaining blockers: Agentplane workflow bundle PR #73 required `lint` status, Model Governance Ledger evidence records, and governance/control-plane assessment.
+Gate 3: create runnable demo slice. Target overall: 45%. Status: substantially complete but not fully merged end-to-end. Remaining blocker: Agentplane workflow bundle PR #73 required `lint` status. Remaining strengthening work: governance/control-plane assessment and board rollup.
 
-Gate 4: produce first integrated demo. Target overall: 60%. Status: not yet runnable end-to-end. Required next: Agentplane bundle merge, model/action evidence ledger, then demo orchestration across playbook -> context query -> policy/obligation check -> route decision -> guardrail check -> Agentplane run -> workroom/evidence/adoption output.
+Gate 4: produce first integrated demo. Target overall: 60%. Status: ready to enter once Agentplane bundle merges. Required next: Agentplane bundle merge, then demo orchestration across playbook -> context query -> policy/obligation check -> route decision -> guardrail check -> Agentplane run -> workroom/evidence/adoption output.
