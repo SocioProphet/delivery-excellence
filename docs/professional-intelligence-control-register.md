@@ -6,24 +6,25 @@ This register is the DelEx control surface for the current Professional Intellig
 
 ## Completion readout
 
-As of 2026-04-29:
+As of 2026-05-04:
 
-- Overall alignment: 42%
+- Overall alignment: 57%
 - Architecture spine: 40%
-- DelEx governance: 45%
+- DelEx governance: 48%
 - DelEx automation: 45%
 - Platform contracts: 45%
-- Governed execution substrate: 22%
-- Workspace, search, and query surface: 25%
+- Governed execution substrate: 56%
+- Workspace, search, and query surface: 45%
 - UI and dashboard integration: 38%
 - Sociosphere topology integration: 40%
 - Policy Fabric integration: 45%
 - ContractForge / Obligation Ledger integration: 45%
-- Governance loops: 45%
-- Cybernetic controls: 36%
+- Institution Context Engine: 55%
+- Governance loops: 48%
+- Cybernetic controls: 42%
 - Playbooks: 35%
-- Runtime implementation: 5%
-- Demo readiness: 34%
+- Runtime implementation: 25%
+- Demo readiness: 58%
 
 ## Current PR wave
 
@@ -37,6 +38,13 @@ As of 2026-04-29:
 - `SocioProphet/socioprophet#300`: merged. UI and dashboard integration definition.
 - `SocioProphet/sociosphere#221`: merged. Topology and managed repo map.
 - `mdheller/socioprophet-web#18`: merged. Professional Intelligence dashboard MVP.
+- `SocioProphet/agent-registry#6`: merged. Professional Intelligence agent specs, tool grants, session authority, revocation records, validation, and tests.
+- `SocioProphet/memory-mesh#12`: merged. Scoped context pack schema, example, validation, and CI wiring.
+- `SocioProphet/sherlock-search#23`: merged. Search packet schema, example, validation, and CI wiring.
+- `SocioProphet/prophet-core-query#4`: merged. Context query schema, example, validation, and CI wiring.
+- `SocioProphet/model-router#10`: merged. Routing decision schema, examples, validation, and docs. Superseded conflicted PR #9.
+- `SocioProphet/guardrail-fabric#10`: merged. Runtime-control pack schema, six-rule example, validation, and docs.
+- `SocioProphet/agentplane#73`: open and blocked by required `lint` status. Workflow bundle is staged but not merged.
 
 ## Current work orders
 
@@ -46,17 +54,17 @@ As of 2026-04-29:
 - `SocioProphet/delivery-excellence-innersource#6`: completed. Playbook linting.
 - `SocioProphet/delivery-excellence-boards#5`: program board lanes and rollup.
 - `SocioProphet/prophet-workspace#8`: completed. Workroom contract and fixture.
-- `SocioProphet/agentplane#72`: workflow bundle and evidence mapping.
-- `SocioProphet/agent-registry#5`: agent specs and tool grants.
-- `SocioProphet/model-router#5`: routing policy examples.
-- `SocioProphet/guardrail-fabric#6`: guardrail pack.
-- `SocioProphet/memory-mesh#11`: scoped context-pack support.
-- `SocioProphet/model-governance-ledger#6`: model and action evidence examples.
-- `SocioProphet/sherlock-search#19`: search packet contract and fixture.
-- `SocioProphet/prophet-core-query#2`: query contract for context inputs.
+- `SocioProphet/agentplane#72`: blocked by Agentplane PR #73 required `lint` status.
+- `SocioProphet/agent-registry#5`: completed. Agent specs and tool grants.
+- `SocioProphet/model-router#5`: completed. Routing policy examples.
+- `SocioProphet/guardrail-fabric#6`: completed. Guardrail pack.
+- `SocioProphet/memory-mesh#11`: completed. Scoped context-pack support.
+- `SocioProphet/model-governance-ledger#6`: pending. Model and action evidence examples.
+- `SocioProphet/sherlock-search#19`: completed. Search packet contract and fixture.
+- `SocioProphet/prophet-core-query#2`: completed. Query contract for context inputs.
 - `SocioProphet/policy-fabric#34`: completed. Professional Policy Decision schema and examples.
 - `SocioProphet/contractforge#4`: completed. Obligation Ledger examples and validation.
-- `SocioProphet/global-devsecops-intelligence#10`: governance and control-plane assessment.
+- `SocioProphet/global-devsecops-intelligence#10`: pending. Governance and control-plane assessment.
 
 ## Out-of-scope for this wave
 
@@ -70,13 +78,14 @@ As of 2026-04-29:
 4. Demo credit requires evidence and adoption telemetry paths.
 5. Use the available environments before adding repos.
 6. Use `SocioProphet` consistently across public and operator-facing surfaces, while preserving intentional Profit/trading-bot naming in out-of-scope repos.
+7. Do not force-merge around branch protection. Agentplane remains blocked until its required `lint` status is reported or repaired.
 
 ## Gates
 
 Gate 1: merge alignment docs and seed contracts. Target overall: 25%. Status: complete.
 
-Gate 2: add validation fixtures. Target overall: 32%. Status: complete for platform, DelEx automation, playbooks, workrooms, policy decisions, and obligations. Remaining optional validation work: search/query/execution surfaces.
+Gate 2: add validation fixtures. Target overall: 32%. Status: complete for platform, DelEx automation, playbooks, workrooms, policy decisions, obligations, search packets, context packs, context queries, routing decisions, and guardrail packs.
 
-Gate 3: create runnable demo slice. Target overall: 45%. Status: active. Required remaining components: Agentplane workflow bundle, Agent Registry tool grants, Memory Mesh context pack, Sherlock search packet, Prophet Core Query context contract, Model Router policy examples, and Guardrail Fabric pack.
+Gate 3: create runnable demo slice. Target overall: 45%. Status: substantially complete but not fully merged end-to-end. Remaining blockers: Agentplane workflow bundle PR #73 required `lint` status, Model Governance Ledger evidence records, and governance/control-plane assessment.
 
-Gate 4: produce first integrated demo. Target overall: 60%. Status: not yet runnable end-to-end.
+Gate 4: produce first integrated demo. Target overall: 60%. Status: not yet runnable end-to-end. Required next: Agentplane bundle merge, model/action evidence ledger, then demo orchestration across playbook -> context query -> policy/obligation check -> route decision -> guardrail check -> Agentplane run -> workroom/evidence/adoption output.
