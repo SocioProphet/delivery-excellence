@@ -53,6 +53,12 @@ def score(artifact: dict[str, Any]) -> dict[str, Any]:
     policy_checks = [check for check in as_list(policy.get("checks")) if isinstance(check, dict)]
     warning_count = sum(1 for check in policy_checks if check.get("state") in {"warn", "require_review"})
     deny_count = sum(1 for check in policy_checks if check.get("state") == "deny")
+    ownership_gap_count = sum(
+        1
+        for node in nodes
+        if node.get("kind") in {"service", "contract", "policy", "schema", "runtime"}
+        and not node.get("metadata", {}).get("owner")
+    )
 
     anchor_ratio = len(anchored_nodes) / len(factual_nodes) if factual_nodes else 1.0
     provenance_ratio = len(facts_with_receipts) / len(facts) if facts else 1.0
@@ -60,7 +66,7 @@ def score(artifact: dict[str, Any]) -> dict[str, Any]:
 
     if not schema_valid or deny_count:
         state = "red"
-    elif warning_count or anchor_ratio < 0.95 or provenance_ratio < 0.95:
+    elif warning_count or ownership_gap_count or anchor_ratio < 0.95 or provenance_ratio < 0.95:
         state = "yellow"
     else:
         state = "green"
@@ -79,7 +85,7 @@ def score(artifact: dict[str, Any]) -> dict[str, Any]:
         "repo_graph_policy_warning_count": warning_count,
         "repo_graph_policy_deny_count": deny_count,
         "repo_pr_impact_radius": diff_radius,
-        "repo_ownership_gap_count": sum(1 for node in nodes if node.get("kind") in {"service", "contract", "policy", "schema", "runtime"} and not node.get("metadata", {}).get("owner")),
+        "repo_ownership_gap_count": ownership_gap_count,
         "provenance_receipt_count": len(receipts),
         "scorecard_state": state,
     }
