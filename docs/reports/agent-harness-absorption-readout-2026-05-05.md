@@ -1,6 +1,6 @@
 # Agent Harness Absorption Readout — 2026-05-05
 
-Status: v0.1 management readout  
+Status: v0.2 management readout  
 Owner plane: Delivery Excellence  
 Scope: cross-estate absorption of Aden/Hive production-agent lessons into SocioProphet, SourceOS, and SociOS-Linux
 
@@ -24,16 +24,16 @@ The key absorption decision is stable:
 
 | Repo | PR | Purpose | Status |
 |---|---:|---|---|
-| `SocioProphet/delivery-excellence` | #9 | Agent harness delivery operating model | Open |
-| `SocioProphet/delivery-excellence-automation` | #7 | Agent harness metric contracts and examples | Open |
+| `SocioProphet/delivery-excellence` | #9 | Agent harness delivery operating model and management readout | Open |
+| `SocioProphet/delivery-excellence-automation` | #7 | Agent harness metric contracts, examples, validator, generator, CI | Open / mergeable |
 | `SocioProphet/sociosphere` | #273 | Cross-estate routing to Delivery Excellence | Open |
-| `SocioProphet/agentplane` | #107 | Runtime contract vocabulary | Open |
-| `SocioProphet/policy-fabric` | #60 | Policy/admission/promotion gate model | Open |
-| `SocioProphet/memory-mesh` | #23 | Memory ledger, artifact pointer, and recall/writeback contract | Open |
-| `SourceOS-Linux/sourceos-spec` | #93 | SourceOS local execution receipt boundary | Open |
-| `SourceOS-Linux/BearBrowser` | #22 | Browser receipt surface | Open |
-| `SourceOS-Linux/TurtleTerm` | #5 | Terminal/operator receipt surface | Open |
-| `SocioProphet/SCOPE-D` | #1 | Agent harness defensive risk-control lanes | Open |
+| `SocioProphet/agentplane` | #107 | Runtime contract vocabulary, schema, example, validator, CI | Open / mergeable |
+| `SocioProphet/policy-fabric` | #60 | Policy/admission/promotion gate model, schema, example, validator | Open |
+| `SocioProphet/memory-mesh` | #23 | Memory ledger, artifact pointer, schema, example, validator, CI | Open / mergeable |
+| `SourceOS-Linux/sourceos-spec` | #93 | SourceOS local execution receipt boundary, schema, example, validator, CI | Open / mergeable |
+| `SourceOS-Linux/BearBrowser` | #22 | Browser receipt surface, schema, example, verifier, CI | Open / mergeable |
+| `SourceOS-Linux/TurtleTerm` | #5 | Terminal/operator receipt surface, schema, example, verifier, CI | Open / mergeable |
+| `SocioProphet/SCOPE-D` | #1 | Agent harness defensive risk-control lanes, schema, example, validator wiring | Open / mergeable |
 
 ## Absorbed lessons
 
@@ -73,42 +73,52 @@ SCOPE-D risk checks become scoreboard inputs: skill risk, MCP risk, browser auto
 
 | Plane | Current score | Status | Rationale |
 |---|---:|---|---|
-| Delivery model | 80 | Green | Operating model PR is open; needs merge and first generated readout. |
-| Metrics automation | 70 | Yellow | Schemas/examples are open; generator still missing. |
-| Topology routing | 75 | Yellow | SocioSphere PR is open; some branches may need update/rebase. |
-| Runtime contracts | 70 | Yellow | AgentPlane vocabulary exists; schemas and emitters remain. |
-| Policy gates | 70 | Yellow | Gate model exists; machine-readable decisions remain. |
-| Memory ledger | 65 | Yellow | Spec exists; schemas/validators and runtime export remain. |
-| SourceOS receipts | 65 | Yellow | Boundary exists; typed schemas and conformance remain. |
-| Browser receipts | 65 | Yellow | Surface exists; policy-enforced examples/verifiers remain. |
-| Terminal receipts | 65 | Yellow | Surface exists; command/mutation examples and verifiers remain. |
-| Defensive validation | 60 | Yellow | Risk-control lanes exist; fixtures and verified reporting extension remain. |
-| Product/customer proof | 45 | Red | Readout contract exists, but live customer-safe projection is not generated yet. |
+| Delivery model | 85 | Green | Operating model and management readout exist; merge still pending. |
+| Metrics automation | 82 | Green | Schemas, examples, validator, generator, and CI workflow are open in PR #7. Live GitHub ingestion remains. |
+| Topology routing | 78 | Yellow | SocioSphere routing PR exists; branch may require update before merge. |
+| Runtime contracts | 80 | Green | AgentPlane now has docs, composite schema, example, validator, and CI. Runtime emitters remain. |
+| Policy gates | 78 | Yellow | Gate model plus first decision schema/example/validator exists; full gate family remains. |
+| Memory ledger | 80 | Green | Memory Mesh now has spec, schema, example, validator, and CI. Runtime export remains. |
+| SourceOS receipts | 80 | Green | SourceOS spec now has receipt boundary, schema, example, validator, and CI. Runtime producers remain. |
+| Browser receipts | 80 | Green | BearBrowser now has receipt surface, schema, example, verifier, and CI. Runtime emission remains. |
+| Terminal receipts | 80 | Green | TurtleTerm now has receipt surface, schema, example, verifier, and CI. Runtime emission remains. |
+| Defensive validation | 78 | Yellow | SCOPE-D now has risk-control docs, schema, example, and validator wiring. More fixtures remain. |
+| Product/customer proof | 62 | Yellow | Customer-proof contract and generator exist; live evidence-pack projection remains. |
 
-Overall absorption baseline: **~68%**.
+Overall absorption baseline: **~79%**.
 
-Interpretation: the estate has absorbed the operating model and plane boundaries. It has not yet completed machine-readable implementation, generators, validators, dashboards, or live metric production.
+Interpretation: the estate has moved from routing/prose absorption to first executable validation across the main planes. It still needs merges, rebases where branches are behind, live emitters, recurring scoreboards, and customer-safe readouts generated from real evidence packs.
+
+## Completed this tranche
+
+1. Added Delivery Excellence metric generator for example activity reports.
+2. Added AgentPlane runtime contract schema, example, validator, and CI workflow.
+3. Added Policy Fabric agent-harness gate-decision schema, example, validator, and Makefile validation wiring.
+4. Added Memory Mesh memory-ledger schema, example, validator, and CI workflow.
+5. Added SourceOS execution-receipt schema, example, validator, and CI workflow.
+6. Added BearBrowser browser-receipt schema, example, verifier, and CI workflow.
+7. Added TurtleTerm terminal-receipt schema, example, verifier, and CI workflow.
+8. Added SCOPE-D agent-harness risk-assessment schema, example, and validator integration.
 
 ## Immediate next tranche
 
-1. Merge or update/rebase the open absorption PRs.
-2. Add generator in `delivery-excellence-automation` for recent repo activity reports from GitHub activity.
-3. Add AgentPlane schemas/examples for `OutcomeSpec`, `GraphSpec`, `SessionEnvelope`, `EvidencePack`, `EvolutionPatch`, and `PromotionGate`.
-4. Add Policy Fabric machine-readable decision schemas for skill, MCP, browser, terminal, memory, judge, human-control, and promotion gates.
-5. Add Memory Mesh schemas/examples and validators for `ArtifactPointer`, `MessageLedgerEvent`, `MemorySnapshot`, and `RecallWritebackEvidence`.
-6. Add SourceOS/BearBrowser/TurtleTerm examples and verifiers for receipt classes.
-7. Add SCOPE-D safe synthetic fixtures for skill, MCP, browser, terminal, memory, graph, and evolution-patch risks.
-8. Generate the first Delivery Excellence scoreboard from real GitHub/repo signals.
+1. Update/rebase branches that are behind current `main`, especially fast-moving SourceOS, BearBrowser, TurtleTerm, SCOPE-D, AgentPlane, and Policy Fabric branches.
+2. Merge or supersede the open absorption PRs.
+3. Replace example-file input in `delivery-excellence-automation` with live GitHub/repo activity ingestion.
+4. Emit AgentPlane `EvidencePack` artifacts using the new runtime contract references.
+5. Emit Memory Mesh artifact pointer and snapshot records from real AgentPlane runs.
+6. Emit BearBrowser and TurtleTerm receipts from actual verifier/smoke paths.
+7. Extend SCOPE-D with additional safe synthetic fixtures for skills, MCP servers, memory poisoning, graph robustness, and evolution-patch risk.
+8. Generate the first recurring Delivery Excellence scoreboard from real repository and evidence signals.
 
 ## Remaining gaps we should not miss
 
-- Live scoreboards are not generated yet.
 - Open PRs are not merged yet.
-- Several branches were reported as behind current `main`; they may need update/rebase before merge.
+- Several branches are behind current `main`; they may need update/rebase before merge.
 - Runtime emitters do not yet produce all new contract objects.
-- Policy gates are still described, not fully enforced for all surfaces.
+- Policy gates are only partially represented by one decision fixture.
 - Skill/MCP registry implementation remains future work.
-- Customer-safe proof-of-value readouts are defined but not generated from evidence packs yet.
+- Customer-safe proof-of-value readouts are generated from example reports, not real evidence packs yet.
 - Dashboard/UI presentation remains future work.
 - Windows/native portability remains a later adoption lane.
 - Billing/usage-ledger hooks remain future work.
@@ -118,10 +128,10 @@ Interpretation: the estate has absorbed the operating model and plane boundaries
 The absorption baseline is complete when:
 
 - all listed PRs are merged or superseded by equivalent merged work;
-- Delivery Excellence can generate at least one cross-estate scoreboard snapshot;
-- AgentPlane can emit or reference the core runtime contract artifacts;
-- Policy Fabric can validate at least one agent-harness gate decision fixture;
-- Memory Mesh can validate at least one artifact pointer / memory snapshot fixture;
-- SourceOS/BearBrowser/TurtleTerm can validate at least one local/browser/terminal receipt fixture;
-- SCOPE-D can validate at least one safe agent-harness risk fixture;
-- a customer-safe proof-of-value readout can be generated from non-sensitive evidence.
+- Delivery Excellence can generate at least one cross-estate scoreboard snapshot from live repo/evidence signals;
+- AgentPlane emits or references the core runtime contract artifacts;
+- Policy Fabric validates representative gate decision fixtures across browser, terminal, memory, skill/MCP, and promotion gates;
+- Memory Mesh validates and emits artifact pointer / memory snapshot fixtures from real runs;
+- SourceOS/BearBrowser/TurtleTerm validate and emit at least one local/browser/terminal receipt fixture from actual smoke paths;
+- SCOPE-D validates safe agent-harness risk fixtures across at least skill, MCP, browser, terminal, memory, and graph lanes;
+- a customer-safe proof-of-value readout is generated from non-sensitive evidence.
