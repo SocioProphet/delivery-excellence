@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "v0.1",
+  "scoreboardId": "scoreboard:computational-artifact:gaia.bounded-osm-ingest@0.1.0:2026-05-08",
+  "generatedAt": "2026-05-08T22:00:00Z",
+  "artifactRef": "artifact://gaia.bounded-osm-ingest@0.1.0",
+  "ownerRepo": "SocioProphet/gaia",
+  "runRef": "github://SocioProphet/gaia/actions/runs/9000000001",
+  "runtimeProfile": "bounded-osm-ingest-v0",
+  "safetyClass": "bounded",
+  "metricSet": "computational-artifact-v0",
+  "metrics": [
+    {
+      "name": "reproducibility_score",
+      "value": 0.97,
+      "unit": "ratio",
+      "direction": "maximize",
+      "threshold": 0.95,
+      "status": "pass",
+      "evidenceRef": "github://SocioProphet/gaia/actions/runs/9000000001#reproducibility"
+    },
+    {
+      "name": "validation_status",
+      "value": "pass",
+      "unit": "enum",
+      "direction": "informational",
+      "status": "pass",
+      "evidenceRef": "github://SocioProphet/gaia/actions/runs/9000000001#validation"
+    },
+    {
+      "name": "feature_count",
+      "value": 142857,
+      "unit": "features",
+      "direction": "informational",
+      "status": "pass",
+      "evidenceRef": "github://SocioProphet/gaia/actions/runs/9000000001#features"
+    },
+    {
+      "name": "invalid_feature_count",
+      "value": 12,
+      "unit": "features",
+      "direction": "minimize",
+      "threshold": 500,
+      "status": "pass",
+      "evidenceRef": "github://SocioProphet/gaia/actions/runs/9000000001#features"
+    },
+    {
+      "name": "ingest_latency_ms",
+      "value": 38420,
+      "unit": "ms",
+      "direction": "minimize",
+      "threshold": 60000,
+      "status": "pass",
+      "evidenceRef": "github://SocioProphet/gaia/actions/runs/9000000001#timing"
+    },
+    {
+      "name": "artifact_size_bytes",
+      "value": 52428800,
+      "unit": "bytes",
+      "direction": "informational",
+      "status": "pass",
+      "evidenceRef": "github://SocioProphet/gaia/actions/runs/9000000001#artifact"
+    },
+    {
+      "name": "evidence_completeness",
+      "value": 0.94,
+      "unit": "ratio",
+      "direction": "maximize",
+      "threshold": 0.9,
+      "status": "pass",
+      "evidenceRef": "github://SocioProphet/gaia/actions/runs/9000000001#evidence"
+    },
+    {
+      "name": "promotion_status",
+      "value": "candidate",
+      "unit": "enum",
+      "direction": "informational",
+      "status": "pass",
+      "evidenceRef": "github://SocioProphet/gaia/actions/runs/9000000001#promotion"
+    }
+  ],
+  "rollup": {
+    "reproducibilityScore": 0.97,
+    "validationStatus": "pass",
+    "promotionStatus": "candidate"
+  },
+  "evidenceRefs": [
+    "github://SocioProphet/gaia/actions/runs/9000000001",
+    "github://SocioProphet/delivery-excellence/issues/15"
+  ],
+  "lineageRefs": [
+    "artifact://gaia.bounded-osm-ingest@0.0.9"
+  ]
+}
