@@ -12,6 +12,10 @@ This repository is the canonical human-readable source of truth for DelEx-OS and
 6. `docs/go-to-market-contracting-customer-success.md`
 7. `docs/cross-repo-architecture.md`
 
+## Program-specific governance plans
+
+- `docs/workspace-operation-plane-delivery-plan.md` — delivery governance plan for the Workspace Operation Plane integration (23 lanes: contracts, runtime, ledger, policy, agents, agent registry, zero-trust interop, workspace UI, workstation contracts, SourceOS spec, sync/state integrity, SourceOS shell, BearBrowser, devtools, agent-machine, memory/search, superconscious cognition loop, HolographMe identity/delegation, SCOPE-D security exercises, storage/knowledge standards, and package release evidence).
+
 ## Then move to companion repos
 
 - `delivery-excellence-automation` for schemas, examples, and validation
