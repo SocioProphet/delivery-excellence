@@ -1,6 +1,6 @@
-.PHONY: validate prophet-understand-smoke computational-artifact-scoreboard-validate
+.PHONY: validate prophet-understand-smoke computational-artifact-scoreboard-validate ioes-delivery-outcome-record-validate
 
-validate: prophet-understand-smoke computational-artifact-scoreboard-validate
+validate: prophet-understand-smoke computational-artifact-scoreboard-validate ioes-delivery-outcome-record-validate
 	@echo "OK: delivery-excellence validate"
 
 prophet-understand-smoke:
@@ -8,3 +8,6 @@ prophet-understand-smoke:
 
 computational-artifact-scoreboard-validate:
 	python3 tools/validate_computational_artifact_scoreboard.py
+
+ioes-delivery-outcome-record-validate:
+	python3 tools/validate_ioes_delivery_outcome_record.py
