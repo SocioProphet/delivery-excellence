@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "v0.1",
+  "recordId": "ioes_delivery_productivity_only_rejected_001",
+  "generatedAt": "2026-06-06T20:35:00Z",
+  "outcomeRef": "outcome:productivity-only-001",
+  "ownerRepo": "SocioProphet/delivery-excellence",
+  "runRef": "run:productivity-only-001",
+  "metricSet": "ioes-delivery-outcome-v0",
+  "humanImpacting": true,
+  "safetyClass": "privileged",
+  "metrics": [
+    {
+      "name": "tickets_closed",
+      "value": 42,
+      "unit": "count",
+      "direction": "maximize",
+      "status": "pass",
+      "evidenceRef": "tracker:tickets"
+    },
+    {
+      "name": "hours_online",
+      "value": 11.5,
+      "unit": "hours",
+      "direction": "maximize",
+      "status": "pass",
+      "evidenceRef": "tracker:presence"
+    }
+  ],
+  "rollup": {
+    "evidenceCompleteness": 0.3,
+    "stewardshipRisk": "unknown",
+    "humanAgencyStatus": "unknown",
+    "promotionStatus": "promoted"
+  },
+  "evidenceRefs": [
+    "tracker:tickets"
+  ],
+  "policyRefs": [
+    "policy:ioes_protected_value_stewarded_learning_artifact_preview"
+  ],
+  "stewardshipRefs": [
+    "regis:missing_stewardship_record"
+  ],
+  "learningRefs": [],
+  "gaiaRefs": [],
+  "agentplaneRefs": [],
+  "humanAgencyPosture": {
+    "consentMaintained": false,
+    "appealOrRepairPath": false,
+    "explanationAvailable": false,
+    "automationBounded": false,
+    "surveillanceUseProhibited": false
+  },
+  "nonClaims": [
+    "This fixture is expected to fail IOES semantic validation because it is productivity-only and human-impacting."
+  ]
+}
