@@ -1,0 +1,94 @@
+{
+  "schemaVersion": "v0.1",
+  "recordId": "ioes_delivery_kept_learning_artifact_001",
+  "generatedAt": "2026-06-06T20:30:00Z",
+  "outcomeRef": "outcome:kept-learning-artifact-001",
+  "ownerRepo": "SocioProphet/delivery-excellence",
+  "runRef": "run:ioes-kept-learning-artifact-001",
+  "metricSet": "ioes-delivery-outcome-v0",
+  "humanImpacting": true,
+  "safetyClass": "bounded",
+  "metrics": [
+    {
+      "name": "stewardship_debt_count",
+      "value": 0,
+      "unit": "count",
+      "direction": "minimize",
+      "threshold": 0,
+      "status": "pass",
+      "evidenceRef": "regis:stewardship_edge_learning_artifact_001"
+    },
+    {
+      "name": "successor_coverage_ratio",
+      "value": 1.0,
+      "unit": "ratio",
+      "direction": "maximize",
+      "threshold": 1.0,
+      "status": "pass",
+      "evidenceRef": "regis:succession_learning_artifact_001"
+    },
+    {
+      "name": "evidence_completeness_ratio",
+      "value": 1.0,
+      "unit": "ratio",
+      "direction": "maximize",
+      "threshold": 0.95,
+      "status": "pass",
+      "evidenceRef": "alexandrian:evb_stewardship_media_transitions_001"
+    },
+    {
+      "name": "human_agency_preserved",
+      "value": true,
+      "unit": "boolean",
+      "direction": "informational",
+      "status": "pass",
+      "evidenceRef": "policy:ioes_protected_value_stewarded_learning_artifact_preview"
+    },
+    {
+      "name": "surveillance_use_prohibited",
+      "value": true,
+      "unit": "boolean",
+      "direction": "informational",
+      "status": "pass",
+      "evidenceRef": "policy:ioes_protected_value_stewarded_learning_artifact_preview"
+    }
+  ],
+  "rollup": {
+    "evidenceCompleteness": 1.0,
+    "stewardshipRisk": "low",
+    "humanAgencyStatus": "preserved",
+    "promotionStatus": "candidate"
+  },
+  "evidenceRefs": [
+    "alexandrian:evb_stewardship_media_transitions_001",
+    "regis:kept-learning-artifact.ioes-records.valid",
+    "policy:ioes-protected-value-veto.valid"
+  ],
+  "policyRefs": [
+    "policy:ioes_protected_value_stewarded_learning_artifact_preview"
+  ],
+  "stewardshipRefs": [
+    "regis:stewardship_edge_learning_artifact_001",
+    "regis:keeper_log_learning_artifact_001",
+    "regis:succession_learning_artifact_001"
+  ],
+  "learningRefs": [
+    "alexandrian:sla_lesson_stewardship_001"
+  ],
+  "gaiaRefs": [
+    "regis:gaia_dependency_learning_artifact_001"
+  ],
+  "agentplaneRefs": [],
+  "humanAgencyPosture": {
+    "consentMaintained": true,
+    "appealOrRepairPath": true,
+    "explanationAvailable": true,
+    "automationBounded": true,
+    "surveillanceUseProhibited": true
+  },
+  "nonClaims": [
+    "This record is not a measure of human worth.",
+    "This record is not an individual productivity score.",
+    "This record supports review and repair, not coercive ranking."
+  ]
+}
