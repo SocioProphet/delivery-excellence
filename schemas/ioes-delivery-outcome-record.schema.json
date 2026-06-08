@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.io/schemas/delivery-excellence/ioes-delivery-outcome-record.schema.json",
+  "title": "IOESDeliveryOutcomeRecord",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "recordId", "generatedAt", "outcomeRef", "ownerRepo", "metricSet", "humanImpacting", "metrics", "evidenceRefs", "policyRefs", "stewardshipRefs", "learningRefs", "humanAgencyPosture", "nonClaims"],
+  "properties": {
+    "schemaVersion": { "const": "v0.1" },
+    "recordId": { "type": "string", "minLength": 1 },
+    "generatedAt": { "type": "string", "minLength": 1 },
+    "outcomeRef": { "type": "string", "minLength": 1 },
+    "ownerRepo": { "type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$" },
+    "runRef": { "type": "string" },
+    "metricSet": { "const": "ioes-delivery-outcome-v0" },
+    "humanImpacting": { "type": "boolean" },
+    "safetyClass": { "enum": ["advisory", "bounded", "privileged", "prohibited"] },
+    "metrics": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "value", "unit", "direction", "status"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "value": { "type": ["number", "string", "boolean"] },
+          "unit": { "type": "string", "minLength": 1 },
+          "direction": { "enum": ["minimize", "maximize", "informational"] },
+          "threshold": { "type": ["number", "string"] },
+          "status": { "enum": ["pass", "warn", "fail", "unknown"] },
+          "evidenceRef": { "type": "string" }
+        }
+      }
+    },
+    "rollup": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "evidenceCompleteness": { "type": "number", "minimum": 0, "maximum": 1 },
+        "stewardshipRisk": { "enum": ["low", "medium", "high", "critical", "unknown"] },
+        "humanAgencyStatus": { "enum": ["preserved", "needs_review", "violated", "unknown"] },
+        "promotionStatus": { "enum": ["blocked", "candidate", "promoted", "deprecated", "unknown"] }
+      }
+    },
+    "evidenceRefs": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
+    "policyRefs": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
+    "stewardshipRefs": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
+    "learningRefs": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "gaiaRefs": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "agentplaneRefs": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "humanAgencyPosture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["consentMaintained", "appealOrRepairPath", "explanationAvailable", "automationBounded", "surveillanceUseProhibited"],
+      "properties": {
+        "consentMaintained": { "type": "boolean" },
+        "appealOrRepairPath": { "type": "boolean" },
+        "explanationAvailable": { "type": "boolean" },
+        "automationBounded": { "type": "boolean" },
+        "surveillanceUseProhibited": { "type": "boolean" }
+      }
+    },
+    "nonClaims": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 }
+  }
+}
