@@ -1,0 +1,37 @@
+name: validate-contracts
+
+# This repo had no CI at all before 2026-08-01, which meant its validators --
+# including the KMASS scoreboard gate that enforces the contract's own
+# "no phase complete without evidence" rule -- were advisory scripts nobody ran.
+# A governance repo whose own contracts are unenforced is the failure mode it
+# exists to prevent, so all validators run here, not just the new one.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: KMASS scoreboard gate
+        run: python3 tools/validate_kmass_scoreboard.py
+
+      - name: OrgGov scorecard contract
+        run: python3 tools/validate_orggov_scorecard.py
+
+      - name: Computational artifact scoreboard contract
+        run: python3 tools/validate_computational_artifact_scoreboard.py
+
+      - name: IOES delivery outcome record contract
+        run: python3 tools/validate_ioes_delivery_outcome_record.py

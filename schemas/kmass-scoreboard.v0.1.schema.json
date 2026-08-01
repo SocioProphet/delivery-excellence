@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.socioprophet.org/delivery-excellence/kmass-scoreboard.v0.1.schema.json",
+  "title": "KMASS Scoreboard v0.1",
+  "description": "A measured instance of the metric contract defined in docs/kmass-metrics-v1.md. Encodes that document's 'Gate implication' rule as structure: a metric may only claim a phase unless it carries a measurement protocol, evidence artifacts, an acceptance threshold, and a reproducible run log. A metric with no measurement MUST declare state=UNMEASURED and carry a blockedBy reason -- silence is not an allowed value.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "recordType", "recordId", "metricsContractRef", "measuredAt", "environment", "metrics", "provenance"],
+  "properties": {
+    "schemaVersion": { "const": "kmass.scoreboard.v0.1" },
+    "recordType": { "const": "KmassScoreboard" },
+    "recordId": { "type": "string" },
+    "metricsContractRef": {
+      "type": "string",
+      "description": "Path/ref to the metric contract this scoreboard instantiates, e.g. docs/kmass-metrics-v1.md"
+    },
+    "measuredAt": { "type": "string", "description": "ISO-8601 timestamp of the measurement run" },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "description"],
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "clusterRef": { "type": "string" }
+      }
+    },
+    "metrics": {
+      "type": "array",
+      "minItems": 1,
+      "description": "One entry per metric id in the contract. Every contract metric MUST appear; omission is a validation failure.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["metricId", "figureRow", "type", "unit", "phaseTargets", "state"],
+        "properties": {
+          "metricId": { "type": "string" },
+          "figureRow": { "type": "string" },
+          "type": { "enum": ["Outcome", "Capacity", "Friction", "Composite"] },
+          "unit": { "type": "string" },
+          "phaseTargets": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["phase1", "phase2", "phase3"],
+            "properties": {
+              "phase1": { "type": ["string", "number", "null"] },
+              "phase2": { "type": ["string", "number", "null"] },
+              "phase3": { "type": ["string", "number", "null"] }
+            }
+          },
+          "state": {
+            "enum": ["MEASURED", "UNMEASURED", "UNBUILT"],
+            "description": "MEASURED = a real number was produced by a run. UNMEASURED = the capability exists but no valid measurement run has occurred. UNBUILT = the capability required to measure this does not exist yet."
+          },
+          "measuredValue": { "type": ["number", "string", "null"] },
+          "sampleSize": { "type": ["integer", "null"] },
+          "measurementProtocol": { "type": ["string", "null"] },
+          "evidenceArtifacts": { "type": "array", "items": { "type": "string" } },
+          "runLog": { "type": ["string", "null"], "description": "Reproducible run log reference. Required when state=MEASURED." },
+          "phaseClaim": {
+            "enum": ["none", "phase1", "phase2", "phase3"],
+            "description": "Which phase this metric currently satisfies. May only be non-'none' when state=MEASURED with protocol, evidence, and runLog present."
+          },
+          "vacuousPass": {
+            "type": "boolean",
+            "description": "TRUE when the measured value nominally meets a target but the result is not meaningful (e.g. latency measured against an empty corpus). A vacuous pass MUST NOT be counted as a phase claim."
+          },
+          "blockedBy": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Required when state is UNMEASURED or UNBUILT: what must exist before this becomes measurable."
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["severity", "summary"],
+        "properties": {
+          "severity": { "enum": ["critical", "high", "medium", "info"] },
+          "summary": { "type": "string" },
+          "detail": { "type": "string" },
+          "evidence": { "type": "string" }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["createdBy", "createdAt", "nonSecret", "method"],
+      "properties": {
+        "createdBy": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "nonSecret": { "type": "boolean" },
+        "method": { "type": "string", "description": "How the measurement was taken, in enough detail to reproduce." }
+      }
+    },
+    "labels": { "type": "object", "additionalProperties": { "type": "string" } }
+  }
+}
