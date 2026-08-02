@@ -32,12 +32,13 @@ Sequencing consequence: **WO-01 gates six other items.** Nothing in TA B or TA D
 **Effort:** hours
 **Owner repo:** `delivery-excellence`
 
-`tools/validate_kmass_scoreboard.py` exists and is proven fail-closed in both directions, but nothing runs it automatically yet. Until it is a required check, the gate rule remains advisory — the exact condition this program is trying to cure.
+`tools/validate_kmass_scoreboard.py` exists and is proven fail-closed in both directions, but nothing ran it automatically before this work order. Until it is a required check, the gate rule remains advisory — the exact condition this program is trying to cure.
 
-**Acceptance:**
-- [ ] `.github/workflows/kmass-scoreboard.yml` runs the validator on every PR touching `scoreboards/**`, `schemas/kmass-scoreboard.*`, or `docs/kmass-metrics-v1.md`
+**Done as of this PR:** `.github/workflows/validate-contracts.yml` runs the KMASS scoreboard gate — plus the repo's three pre-existing contract validators, which had never run in CI either — unconditionally on every PR and every push to `main`. Unscoped on purpose: all four are stdlib-only scripts over small JSON/Markdown files, so path-filtering would save negligible time at the cost of a missed run if a metric changes through an unexpected path.
+
+**Acceptance still open:**
 - [ ] The check is marked **required** in branch protection, matching the `gate / check` pattern already required across six estate repos
-- [ ] Adding a new metric id to the contract makes existing scoreboards fail until measured (already implemented — verify it in CI, don't assume)
+- [ ] Adding a new metric id to the contract makes existing scoreboards fail until measured — confirmed locally (adding an unknown metric id triggers `scoreboard reports metric id(s) not present in the contract`); verify the same failure surfaces in the actual CI run, not just locally
 
 **Do this first.** It is the cheapest item and it makes every later claim falsifiable.
 

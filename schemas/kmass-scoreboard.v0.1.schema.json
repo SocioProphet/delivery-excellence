@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schemas.socioprophet.org/delivery-excellence/kmass-scoreboard.v0.1.schema.json",
   "title": "KMASS Scoreboard v0.1",
-  "description": "A measured instance of the metric contract defined in docs/kmass-metrics-v1.md. Encodes that document's 'Gate implication' rule as structure: a metric may only claim a phase unless it carries a measurement protocol, evidence artifacts, an acceptance threshold, and a reproducible run log. A metric with no measurement MUST declare state=UNMEASURED and carry a blockedBy reason -- silence is not an allowed value.",
+  "description": "A measured instance of the metric contract defined in docs/kmass-metrics-v1.md. Encodes that document's 'Gate implication' rule as structure: a metric may only claim a phase if it carries a measurement protocol, evidence artifacts, an acceptance threshold, and a reproducible run log. A metric with no measurement MUST declare state=UNMEASURED and carry a blockedBy reason -- silence is not an allowed value.",
   "type": "object",
   "additionalProperties": false,
   "required": ["schemaVersion", "recordType", "recordId", "metricsContractRef", "measuredAt", "environment", "metrics", "provenance"],

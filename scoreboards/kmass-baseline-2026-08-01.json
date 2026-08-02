@@ -229,9 +229,9 @@
     },
     {
       "severity": "high",
-      "summary": "This measurement run served the first 30 queries in the service's lifetime.",
-      "detail": "search_query_total was exactly 0 before this run. The production search-orchestrator had never served a single query prior to Baseline Day. Uptime and green health checks had been reporting success against a path no traffic had ever traversed.",
-      "evidence": "/v1/search/debug/metrics initial read: search_query_total=0"
+      "summary": "search_query_total was zero for the entire lifetime of the current pod before this run.",
+      "detail": "The current search-orchestrator pod was 3d2h old with 0 restarts, and search_query_total read exactly 0 before this run's 30 queries. The metric is process-local (mode=in-memory throughout this service), so this proves zero traffic for at least that pod's 3+ day lifetime -- it does NOT prove zero traffic since the Deployment's creation (2026-07-13, ~3 weeks prior); an earlier pod incarnation could have served queries before this one started. Either way, uptime and green health checks were reporting success against a path with no evidence of use for at least 3 days.",
+      "evidence": "kubectl get pod: restarts=0, age=3d2h; /v1/search/debug/metrics initial read: search_query_total=0; deployment creationTimestamp=2026-07-13T17:47:47Z (not directly comparable to the in-memory counter)"
     },
     {
       "severity": "high",

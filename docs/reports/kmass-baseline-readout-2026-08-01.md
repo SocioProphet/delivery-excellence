@@ -70,7 +70,7 @@ p50 of **8.8ms** against a Phase-3 target of 1 second. Recorded as `vacuousPass:
 
 This is the most dangerous number in the scoreboard — it is the one that would survive a slide review unchallenged. The schema and validator exist specifically so it cannot be promoted into a phase claim.
 
-**Also worth stating plainly:** `search_query_total` was exactly `0` before this run. The 30 queries in this readout were the first ever served by the production search-orchestrator. Green health checks had been reporting success on a path no traffic had ever traversed — the same shape as the Loki incident earlier the same day, where a merged, healthy-looking pipeline had ingested zero bytes for 2.5 days.
+**Also worth stating plainly, precisely:** `search_query_total` was exactly `0` before this run. The counter is process-local (`mode: in-memory`, like everything else in this tier), and the current pod was 3d2h old with 0 restarts — so this proves at least 3 days with no evidence of query traffic, not that the service has literally never served a query since the Deployment was created (2026-07-13, ~3 weeks earlier); an earlier pod incarnation could have. Either reading lands the same place: green health checks were reporting success on a path with no confirmed traffic for at least three days — the same shape as the Loki incident earlier the same day, where a merged, healthy-looking pipeline had ingested zero bytes for 2.5 days.
 
 ## Run log
 

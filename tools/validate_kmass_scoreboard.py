@@ -60,6 +60,74 @@ def load_json(path: Path) -> Any:
         sys.exit(1)
 
 
+def json_type_name(value: Any) -> str:
+    if value is None:
+        return "null"
+    if isinstance(value, bool):
+        return "boolean"
+    if isinstance(value, int):
+        return "integer"
+    if isinstance(value, float):
+        return "number"
+    if isinstance(value, str):
+        return "string"
+    if isinstance(value, list):
+        return "array"
+    return "object"
+
+
+def type_matches(value: Any, expected: str) -> bool:
+    if expected == "number":
+        return isinstance(value, (int, float)) and not isinstance(value, bool)
+    if expected == "integer":
+        return isinstance(value, int) and not isinstance(value, bool)
+    return json_type_name(value) == expected
+
+
+def validate_schema(schema: dict[str, Any], value: Any, path: str, errors: list[str]) -> None:
+    """Structural validation driven by the schema file itself.
+
+    Matches the walker convention already used by validate_orggov_scorecard.py
+    (stdlib only, no jsonschema dependency). This exists because a schema that
+    nothing validates against is documentation wearing a contract's clothes --
+    the precise failure this whole scoreboard effort is meant to cure. The
+    semantic gate rules below layer on top of this; they do not replace it.
+    """
+    if "const" in schema and value != schema["const"]:
+        errors.append(f"{path}: expected const {schema['const']!r}, got {value!r}")
+    if "enum" in schema and value not in schema["enum"]:
+        errors.append(f"{path}: {value!r} not in enum {schema['enum']!r}")
+    expected_type = schema.get("type")
+    if expected_type is not None:
+        expected_types = expected_type if isinstance(expected_type, list) else [expected_type]
+        if not any(type_matches(value, t) for t in expected_types):
+            errors.append(f"{path}: expected type {expected_types!r}, got {json_type_name(value)!r}")
+    if isinstance(value, dict):
+        for key in schema.get("required", []):
+            if key not in value:
+                errors.append(f"{path}: missing required property {key!r}")
+        properties = schema.get("properties", {})
+        if schema.get("additionalProperties") is False:
+            extra = sorted(set(value) - set(properties))
+            if extra:
+                errors.append(f"{path}: unexpected properties {extra!r}")
+        additional = schema.get("additionalProperties")
+        for key, item in value.items():
+            child = properties.get(key)
+            if child is None and isinstance(additional, dict):
+                child = additional
+            if child is not None:
+                validate_schema(child, item, f"{path}.{key}", errors)
+    if isinstance(value, list):
+        min_items = schema.get("minItems")
+        if isinstance(min_items, int) and len(value) < min_items:
+            errors.append(f"{path}: expected at least {min_items} item(s), got {len(value)}")
+        item_schema = schema.get("items")
+        if item_schema is not None:
+            for i, item in enumerate(value):
+                validate_schema(item_schema, item, f"{path}[{i}]", errors)
+
+
 def contract_metric_ids() -> set[str]:
     """Parse the metric ids out of the contract's canonical metric table.
 
@@ -79,12 +147,21 @@ def contract_metric_ids() -> set[str]:
     return ids
 
 
-def validate(path: Path, expected_ids: set[str]) -> list[str]:
+def validate(path: Path, expected_ids: set[str], schema: dict[str, Any]) -> list[str]:
     doc = load_json(path)
     errors: list[str] = []
 
     def err(msg: str) -> None:
         errors.append(msg)
+
+    # Structural pass against the schema file itself, first -- a schema that
+    # is never applied is decoration, not a contract. The checks below layer
+    # semantic/cross-field gate rules the generic walker can't express
+    # (contract-derived coverage, the vacuous-pass rule, phase-claim
+    # attachment requirements), so both passes run; neither replaces the other.
+    validate_schema(schema, doc, "$", errors)
+    if errors:
+        return errors
 
     if doc.get("schemaVersion") != "kmass.scoreboard.v0.1":
         err(f"schemaVersion must be 'kmass.scoreboard.v0.1', got {doc.get('schemaVersion')!r}")
@@ -179,6 +256,7 @@ def main(argv: list[str]) -> int:
     if not SCHEMA.exists():
         print(f"FAIL: schema missing: {SCHEMA}")
         return 1
+    schema = load_json(SCHEMA)
 
     expected = contract_metric_ids()
 
@@ -194,7 +272,7 @@ def main(argv: list[str]) -> int:
 
     total_errors = 0
     for p in paths:
-        errs = validate(p, expected)
+        errs = validate(p, expected, schema)
         if errs:
             total_errors += len(errs)
             print(f"\nFAIL {p.name} -- {len(errs)} violation(s):")
