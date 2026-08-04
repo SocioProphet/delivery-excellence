@@ -1,0 +1,311 @@
+{
+  "schemaVersion": "kmass.scoreboard.v0.1",
+  "recordType": "KmassScoreboard",
+  "recordId": "kmass-org-twin-layer1-2026-08-04",
+  "metricsContractRef": "docs/kmass-metrics-v1.md",
+  "measuredAt": "2026-08-04T02:50:00Z",
+  "environment": {
+    "name": "prophet-platform-prod",
+    "description": "Live GKE Autopilot cluster; measurements taken in-cluster against ClusterIP service DNS to exclude ingress/WAN variance.",
+    "clusterRef": "gke_socioprophet-platform_us-central1_prophet-platform"
+  },
+  "metrics": [
+    {
+      "metricId": "TAB.TEXT.GRAN",
+      "figureRow": "Textual Granularity",
+      "type": "Outcome",
+      "unit": "Top-1 accuracy @ unit",
+      "phaseTargets": {
+        "phase1": "80% @ document",
+        "phase2": "80% @ paragraph",
+        "phase3": "80% @ sentence"
+      },
+      "state": "UNMEASURED",
+      "measuredValue": null,
+      "sampleSize": null,
+      "measurementProtocol": "Top-1 exact match against labeled target set, min 30 queries per phase per modality (contract \u00a7Measurement protocols)",
+      "evidenceArtifacts": [],
+      "runLog": null,
+      "phaseClaim": "none",
+      "vacuousPass": false,
+      "blockedBy": [
+        "No labeled query/target set exists anywhere in the estate",
+        "No durable text corpus to evaluate against (see TAB.TEXT.SCALE)",
+        "search-orchestrator returns 0 results for all queries, so accuracy is undefined"
+      ],
+      "notes": "Accuracy cannot be defined while the retrieval path returns the empty set for every input. [Carried forward unchanged from kmass-baseline-2026-08-01; not re-measured in this run.]"
+    },
+    {
+      "metricId": "TAB.VIDEO.GRAN",
+      "figureRow": "Video Granularity",
+      "type": "Outcome",
+      "unit": "Success@5 / Recall@5",
+      "phaseTargets": {
+        "phase1": "65% @ video",
+        "phase2": "65% @ 1-min clip",
+        "phase3": "65% @ frame"
+      },
+      "state": "UNBUILT",
+      "measuredValue": null,
+      "sampleSize": null,
+      "measurementProtocol": "Success@5 or Recall@5 with IoU threshold against labeled temporal target window",
+      "evidenceArtifacts": [],
+      "runLog": null,
+      "phaseClaim": "none",
+      "vacuousPass": false,
+      "blockedBy": [
+        "No video, media, ASR, or transcode service exists in the cluster (verified: zero matching pods across all namespaces)",
+        "No media catalog or segment index",
+        "videolab/imagelab/speechlab are lab repos, not deployed services"
+      ],
+      "notes": " [Carried forward unchanged from kmass-baseline-2026-08-01; not re-measured in this run.]"
+    },
+    {
+      "metricId": "TAB.TEXT.SCALE",
+      "figureRow": "Text Sources",
+      "type": "Capacity",
+      "unit": "count",
+      "phaseTargets": {
+        "phase1": 20000,
+        "phase2": 120000,
+        "phase3": 800000
+      },
+      "state": "MEASURED",
+      "measuredValue": 12,
+      "sampleSize": null,
+      "measurementProtocol": "Sum of retrievable documents across all live index services, read from each service's own health/stats endpoint",
+      "evidenceArtifacts": [
+        "sherlock-engine /healthz -> {\"docs\":12,\"engine\":\"tantivy\",\"dense\":false}",
+        "commons-search /healthz -> {\"store\":\"memory\",\"count\":0}",
+        "memoryd /healthz -> {\"store\":{\"backend\":\"memory\",\"resource_count\":0,\"event_count\":0,\"memory_count\":0}}",
+        "search-orchestrator /v1/search/debug/config -> academy_repository.record_count=1421, mode=in-memory"
+      ],
+      "runLog": "docs/reports/kmass-baseline-readout-2026-08-01.md#run-log",
+      "phaseClaim": "none",
+      "vacuousPass": false,
+      "blockedBy": [],
+      "notes": "12 retrievable documents against a Phase-1 target of 20,000 = 0.06%. The search-orchestrator additionally holds 1421 seeded academy records, but they are NOT retrievable (0 results for every query tried, all modes) so they are excluded from the retrievable count. Root cause is architectural, not volumetric: every store in the retrieval tier is non-durable (see finding: ephemeral-retrieval-tier). [Carried forward unchanged from kmass-baseline-2026-08-01; not re-measured in this run.]"
+    },
+    {
+      "metricId": "TAB.VIDEO.SCALE",
+      "figureRow": "Video Sources",
+      "type": "Capacity",
+      "unit": "hours",
+      "phaseTargets": {
+        "phase1": 40,
+        "phase2": 220,
+        "phase3": 400
+      },
+      "state": "UNBUILT",
+      "measuredValue": 0,
+      "sampleSize": null,
+      "measurementProtocol": "Media catalog duration sum + segment index cardinality",
+      "evidenceArtifacts": [
+        "No video/media/ASR pods found in any namespace"
+      ],
+      "runLog": "docs/reports/kmass-baseline-readout-2026-08-01.md#run-log",
+      "phaseClaim": "none",
+      "vacuousPass": false,
+      "blockedBy": [
+        "No media ingest, catalog, or segment index capability is deployed"
+      ],
+      "notes": " [Carried forward unchanged from kmass-baseline-2026-08-01; not re-measured in this run.]"
+    },
+    {
+      "metricId": "TAC.CAPTURE.FRICTION",
+      "figureRow": "Easy and Natural",
+      "type": "Friction",
+      "unit": "minutes / fact",
+      "phaseTargets": {
+        "phase1": 10,
+        "phase2": 5,
+        "phase3": 2
+      },
+      "state": "UNMEASURED",
+      "measuredValue": null,
+      "sampleSize": null,
+      "measurementProtocol": "Timestamped capture traces, min n=30 per contract sampling rule",
+      "evidenceArtifacts": [],
+      "runLog": null,
+      "phaseClaim": "none",
+      "vacuousPass": false,
+      "blockedBy": [
+        "No capture-trace instrumentation exists in goose-notes or any capture surface",
+        "No deployed capture endpoint in-cluster to time against"
+      ],
+      "notes": "goose-notes is the designated capture surface but is not deployed to the measured environment and emits no timing traces. [Carried forward unchanged from kmass-baseline-2026-08-01; not re-measured in this run.]"
+    },
+    {
+      "metricId": "TAD.LATENCY.JIT",
+      "figureRow": "Just-in-Time",
+      "type": "Outcome",
+      "unit": "seconds",
+      "phaseTargets": {
+        "phase1": 60,
+        "phase2": 8,
+        "phase3": 1
+      },
+      "state": "MEASURED",
+      "measuredValue": 0.0088,
+      "sampleSize": 30,
+      "measurementProtocol": "End-to-end query-to-answer completion, 30 distinct queries, in-cluster to exclude ingress variance",
+      "evidenceArtifacts": [
+        "search-orchestrator /v0/search/query: n=30 mean=8.7ms p50=8.8ms p95=9.4ms ok=30/30",
+        "sherlock-engine /search: n=30 mean=9.1ms p50=6.9ms p95=8.3ms"
+      ],
+      "runLog": "docs/reports/kmass-baseline-readout-2026-08-01.md#run-log",
+      "phaseClaim": "none",
+      "vacuousPass": true,
+      "blockedBy": [],
+      "notes": "VACUOUS PASS. p50 of 8.8ms nominally beats even the Phase-3 target of 1 second by ~113x, but every one of the 30 queries returned zero results. Latency over an empty result set measures nothing. This value MUST NOT be reported as a Phase-3 claim; it must be re-measured once retrieval returns real results. [Carried forward unchanged from kmass-baseline-2026-08-01; not re-measured in this run.]"
+    },
+    {
+      "metricId": "TAD.ACTIONS.JE",
+      "figureRow": "Just-enough",
+      "type": "Friction",
+      "unit": "action count",
+      "phaseTargets": {
+        "phase1": 10,
+        "phase2": 5,
+        "phase3": 1
+      },
+      "state": "UNMEASURED",
+      "measuredValue": null,
+      "sampleSize": null,
+      "measurementProtocol": "Discrete user or agent actions required to reach an acceptable answer state",
+      "evidenceArtifacts": [],
+      "runLog": null,
+      "phaseClaim": "none",
+      "vacuousPass": false,
+      "blockedBy": [
+        "Undefined while no query path reaches an 'acceptable answer state' (0 results for all queries)",
+        "No action instrumentation on any UI or agent surface"
+      ],
+      "notes": " [Carried forward unchanged from kmass-baseline-2026-08-01; not re-measured in this run.]"
+    },
+    {
+      "metricId": "TAD.RELEVANCE.JFM",
+      "figureRow": "Just-for-me",
+      "type": "Outcome",
+      "unit": "percent relevant",
+      "phaseTargets": {
+        "phase1": 70,
+        "phase2": 83,
+        "phase3": 98
+      },
+      "state": "UNMEASURED",
+      "measuredValue": null,
+      "sampleSize": null,
+      "measurementProtocol": "Blinded human evaluation, 0-3 rubric, score >= 2 counts relevant",
+      "evidenceArtifacts": [],
+      "runLog": null,
+      "phaseClaim": "none",
+      "vacuousPass": false,
+      "blockedBy": [
+        "No results to evaluate (0 results returned for all queries)",
+        "No blinded evaluation harness or rubric instrument exists",
+        "No per-actor personalization signal is wired into the query path"
+      ],
+      "notes": " [Carried forward unchanged from kmass-baseline-2026-08-01; not re-measured in this run.]"
+    },
+    {
+      "metricId": "SYS.SPEEDUP",
+      "figureRow": "Speed Improvement",
+      "type": "Composite",
+      "unit": "multiplier",
+      "phaseTargets": {
+        "phase1": "1.1x",
+        "phase2": "2x",
+        "phase3": "5x"
+      },
+      "state": "UNMEASURED",
+      "measuredValue": null,
+      "sampleSize": null,
+      "measurementProtocol": "Time-on-task studies against a control condition",
+      "evidenceArtifacts": [],
+      "runLog": null,
+      "phaseClaim": "none",
+      "vacuousPass": false,
+      "blockedBy": [
+        "A speedup multiplier requires a baseline control condition, which has never been established",
+        "Depends on TAD.LATENCY.JIT and TAD.ACTIONS.JE being non-vacuous first"
+      ],
+      "notes": " [Carried forward unchanged from kmass-baseline-2026-08-01; not re-measured in this run.]"
+    },
+    {
+      "metricId": "SYS.SCALE.TBD",
+      "figureRow": "Scale",
+      "type": "Composite",
+      "unit": "multi-dimensional",
+      "phaseTargets": {
+        "phase1": null,
+        "phase2": null,
+        "phase3": null
+      },
+      "state": "MEASURED",
+      "measuredValue": "K_verified=109 E_verified=120 (K_declared=109 E_declared=156; P_task/CoP/throughput unmeasured)",
+      "sampleSize": 27,
+      "measurementProtocol": "Policy/task/role graph statistics: |K| knowledge elements, |E| relations, |P(task)| policies per task, |CoP| communities of practice and role distributions, task throughput by role",
+      "evidenceArtifacts": [
+        "scoreboards/artifacts/org-twin-layer1-2026-08-04.json"
+      ],
+      "runLog": "tools/org_twin_layer1_extractor.py --out scoreboards/artifacts/org-twin-layer1-2026-08-04.json",
+      "phaseClaim": "none",
+      "vacuousPass": false,
+      "blockedBy": [
+        "|P(task)|, |CoP|, and role throughput are Layer 2 (work/policy overlay) -- not built yet, so this row is a PARTIAL measurement of |K| and |E| only",
+        "Phase targets are still TBD/TBD/TBD in the contract -- a measured baseline exists now to set them from, but they have not been set"
+      ],
+      "notes": "First real measurement of this row (previously fully UNMEASURED). Layer 1 inventory graph only: |K|=109, |E|=120 verified (each of workspace-inventory's 27 declared repos confirmed to exist via a live gh api probe, not trusted from the YAML alone -- all 27 verified this run). 36 declared related_to edges point at repos this same inventory file does not itself catalogue as an entry (e.g. sourceos-spec, agentplane, policy-fabric, model-router) -- a genuine finding about workspace-inventory's own incompleteness, not a bug in the extractor. |P(task)|, |CoP|, and throughput remain unmeasured pending Layer 2. See docs/design/org-digital-twin-v0.md."
+    }
+  ],
+  "findings": [
+    {
+      "severity": "critical",
+      "summary": "The entire retrieval tier is non-durable; no corpus can accumulate.",
+      "detail": "Zero PersistentVolumeClaims back any retrieval service. sherlock-engine's tantivy index lives on an emptyDir capped at 256Mi. commons-search reports store=memory. memoryd reports backend=memory. search-orchestrator's academy repository reports mode=in-memory with json_file/lampstand_jsonl/lampstand_carrier all false. Every pod restart resets the corpus to zero. Growth targets of 20k -> 120k -> 800k documents are unreachable by construction, not by effort.",
+      "evidence": "kubectl get pvc -A (no retrieval PVCs); pod volume spec shows tmp -> emptyDir{sizeLimit:256Mi}; service /healthz payloads"
+    },
+    {
+      "severity": "critical",
+      "summary": "search-orchestrator returns zero results for every query, despite holding 1421 seeded records.",
+      "detail": "30 diverse queries plus generic probes ('a', 'the', 'learning', '*', empty string) across modes default/semantic/keyword/hybrid/all all returned results: []. Its own counter academy_result_total remained 0 while search_query_total advanced to 30. The seeded corpus (academy_seed_total=1421) is not connected to the retrieval path.",
+      "evidence": "POST /v0/search/query x30 -> 0 nonzero; /v1/search/debug/metrics before/after delta = {search_query_total: +30} only"
+    },
+    {
+      "severity": "critical",
+      "summary": "The search policy gate has never fired -- not once, including under this measurement run.",
+      "detail": "policy_decision_allow_total, _deny_total, _local_total, _remote_total and _fallback_total were all 0 before the run and all still 0 after 30 successful queries. A policy gate that does not evaluate on the request path is declared, not enforced. This is the estate's 'never-fired = SUSPECT' pattern in its purest form.",
+      "evidence": "/v1/search/debug/metrics before/after this scoreboard's own 30-query run"
+    },
+    {
+      "severity": "high",
+      "summary": "search_query_total was zero for the entire lifetime of the current pod before this run.",
+      "detail": "The current search-orchestrator pod was 3d2h old with 0 restarts, and search_query_total read exactly 0 before this run's 30 queries. The metric is process-local (mode=in-memory throughout this service), so this proves zero traffic for at least that pod's 3+ day lifetime -- it does NOT prove zero traffic since the Deployment's creation (2026-07-13, ~3 weeks prior); an earlier pod incarnation could have served queries before this one started. Either way, uptime and green health checks were reporting success against a path with no evidence of use for at least 3 days.",
+      "evidence": "kubectl get pod: restarts=0, age=3d2h; /v1/search/debug/metrics initial read: search_query_total=0; deployment creationTimestamp=2026-07-13T17:47:47Z (not directly comparable to the in-memory counter)"
+    },
+    {
+      "severity": "high",
+      "summary": "Latency 'passes' Phase 3 by 113x, and the pass is meaningless.",
+      "detail": "p50 8.8ms against a Phase-3 target of 1s. Because every query returns the empty set, this measures the cost of returning nothing. Recorded with vacuousPass=true so it cannot be counted toward a phase claim. This is precisely the silent-wrong class the contract's confidence rules exist to catch.",
+      "evidence": "n=30, nonzero-result=0/30"
+    },
+    {
+      "severity": "info",
+      "summary": "Two components are genuinely healthy and doing real work.",
+      "detail": "The embeddings service serves nomic-embed-text-v1.5 at 768 dimensions with p50 103ms over 10 samples. sherlock-engine's tantivy index answers in p50 6.9ms and returned non-empty results for 14 of 30 queries against its 12 documents -- small, but real retrieval. These are the two load-bearing pieces to build on.",
+      "evidence": "embeddings /healthz + /v1/embeddings n=10; sherlock /search n=30, 14 nonzero"
+    }
+  ],
+  "provenance": {
+    "createdBy": "org-digital-twin-layer1/2026-08-04",
+    "createdAt": "2026-08-04T02:50:00Z",
+    "nonSecret": true,
+    "method": "tools/org_twin_layer1_extractor.py run against workspace-inventory/inventory/repos.yaml (27 declared repo entries), with each repo node live-probed via `gh api repos/:org/:repo` (not trusted from the declaration alone). |K| and |E| reported are the VERIFIED subgraph, per docs/design/org-digital-twin-v0.md's declared-vs-verified honesty constraint. Full graph + summary in scoreboards/artifacts/org-twin-layer1-2026-08-04.json. Only SYS.SCALE changed in this record -- every other metric is carried forward unchanged from kmass-baseline-2026-08-01 and was NOT re-measured in this run (see notes on each row); this record exists specifically to give SYS.SCALE a second, different scoreboard so trend becomes visible (WO-KMASS-01's own definition of done), not to re-certify the rest of the estate."
+  },
+  "labels": {
+    "program": "kmass",
+    "runType": "org-twin-layer1",
+    "phase": "pre-phase-1"
+  }
+}
