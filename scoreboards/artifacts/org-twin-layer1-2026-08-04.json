@@ -1,0 +1,2035 @@
+{
+  "graph": {
+    "nodes": [
+      {
+        "id": "repo:SocioProphet/socioprophet",
+        "type": "repo",
+        "name": "socioprophet",
+        "org": "SocioProphet",
+        "authority_role": "public_surface",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:web_portal",
+        "type": "capability",
+        "name": "web_portal",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:api",
+        "type": "capability",
+        "name": "api",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:mcp_servers",
+        "type": "capability",
+        "name": "mcp_servers",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SocioProphet/workspace-inventory",
+        "type": "repo",
+        "name": "workspace-inventory",
+        "org": "SocioProphet",
+        "authority_role": "repository_index",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:repo_index",
+        "type": "capability",
+        "name": "repo_index",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:inventory_validation",
+        "type": "capability",
+        "name": "inventory_validation",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SocioProphet/sociosphere",
+        "type": "repo",
+        "name": "sociosphere",
+        "org": "SocioProphet",
+        "authority_role": "workspace_controller",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:workspace_manifest",
+        "type": "capability",
+        "name": "workspace_manifest",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:workspace_lock",
+        "type": "capability",
+        "name": "workspace_lock",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:runner_semantics",
+        "type": "capability",
+        "name": "runner_semantics",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SocioProphet/agentplane",
+        "type": "repo",
+        "name": "agentplane",
+        "org": "SocioProphet",
+        "authority_role": "execution_control_plane",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:bundle_execution",
+        "type": "capability",
+        "name": "bundle_execution",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:evidence_artifacts",
+        "type": "capability",
+        "name": "evidence_artifacts",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:replay",
+        "type": "capability",
+        "name": "replay",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SocioProphet/prophet-platform",
+        "type": "repo",
+        "name": "prophet-platform",
+        "org": "SocioProphet",
+        "authority_role": "platform_runtime",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:platform_apps",
+        "type": "capability",
+        "name": "platform_apps",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:contracts",
+        "type": "capability",
+        "name": "contracts",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:telemetry",
+        "type": "capability",
+        "name": "telemetry",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SocioProphet/prophet-core-catalog",
+        "type": "repo",
+        "name": "prophet-core-catalog",
+        "org": "SocioProphet",
+        "authority_role": "provenance_catalog_seed",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:catalog",
+        "type": "capability",
+        "name": "catalog",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:provenance_index",
+        "type": "capability",
+        "name": "provenance_index",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SocioProphet/ontogenesis",
+        "type": "repo",
+        "name": "ontogenesis",
+        "org": "SocioProphet",
+        "authority_role": "ontology_authority",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:capd:ontogenesis",
+        "type": "capability",
+        "name": "capd:ontogenesis",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SocioProphet/socioprophet-standards-storage",
+        "type": "repo",
+        "name": "socioprophet-standards-storage",
+        "org": "SocioProphet",
+        "authority_role": "standards_storage",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:schemas",
+        "type": "capability",
+        "name": "schemas",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:evidence_contracts",
+        "type": "capability",
+        "name": "evidence_contracts",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:control_plane_standards",
+        "type": "capability",
+        "name": "control_plane_standards",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SocioProphet/socioprophet-standards-knowledge",
+        "type": "repo",
+        "name": "socioprophet-standards-knowledge",
+        "org": "SocioProphet",
+        "authority_role": "knowledge_context_standards",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:knowledge_schemas",
+        "type": "capability",
+        "name": "knowledge_schemas",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:tritrpc_bindings",
+        "type": "capability",
+        "name": "tritrpc_bindings",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:roundtrip_verifiers",
+        "type": "capability",
+        "name": "roundtrip_verifiers",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SocioProphet/tritrpc",
+        "type": "repo",
+        "name": "tritrpc",
+        "org": "SocioProphet",
+        "authority_role": "transport_protocol",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:transport",
+        "type": "capability",
+        "name": "transport",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:fixtures",
+        "type": "capability",
+        "name": "fixtures",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:framing",
+        "type": "capability",
+        "name": "framing",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SocioProphet/sourceos-a2a-mcp-bootstrap",
+        "type": "repo",
+        "name": "sourceos-a2a-mcp-bootstrap",
+        "org": "SocioProphet",
+        "authority_role": "identity_bootstrap",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:carrier_verify",
+        "type": "capability",
+        "name": "carrier_verify",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SocioProphet/human-digital-twin",
+        "type": "repo",
+        "name": "human-digital-twin",
+        "org": "SocioProphet",
+        "authority_role": "hdt_consumer",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:api:hdt",
+        "type": "capability",
+        "name": "api:hdt",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:opa:policies",
+        "type": "capability",
+        "name": "opa:policies",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:tritrpc:devine",
+        "type": "capability",
+        "name": "tritrpc:devine",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SocioProphet/cloudshell-fog",
+        "type": "repo",
+        "name": "cloudshell-fog",
+        "org": "SocioProphet",
+        "authority_role": "hmi_gateway",
+        "status": "held",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:cloud_shell",
+        "type": "capability",
+        "name": "cloud_shell",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:operator_gateway",
+        "type": "capability",
+        "name": "operator_gateway",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SociOS-Linux/SourceOS",
+        "type": "repo",
+        "name": "SourceOS",
+        "org": "SociOS-Linux",
+        "authority_role": "immutable_substrate",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:substrate",
+        "type": "capability",
+        "name": "substrate",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:truth_plane",
+        "type": "capability",
+        "name": "truth_plane",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SociOS-Linux/socios",
+        "type": "repo",
+        "name": "socios",
+        "org": "SociOS-Linux",
+        "authority_role": "automation_commons",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:ci_cd",
+        "type": "capability",
+        "name": "ci_cd",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:build_automation",
+        "type": "capability",
+        "name": "build_automation",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:catalogs",
+        "type": "capability",
+        "name": "catalogs",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:signatures",
+        "type": "capability",
+        "name": "signatures",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SociOS-Linux/workstation-contracts",
+        "type": "repo",
+        "name": "workstation-contracts",
+        "org": "SociOS-Linux",
+        "authority_role": "workstation_ci_contracts",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:lane_contracts",
+        "type": "capability",
+        "name": "lane_contracts",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:conformance",
+        "type": "capability",
+        "name": "conformance",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SourceOS-Linux/sourceos-spec",
+        "type": "repo",
+        "name": "sourceos-spec",
+        "org": "SourceOS-Linux",
+        "authority_role": "typed_contract_authority",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:json_schemas",
+        "type": "capability",
+        "name": "json_schemas",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:openapi_patches",
+        "type": "capability",
+        "name": "openapi_patches",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:asyncapi_patches",
+        "type": "capability",
+        "name": "asyncapi_patches",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:semantic_overlay",
+        "type": "capability",
+        "name": "semantic_overlay",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SourceOS-Linux/agent-machine",
+        "type": "repo",
+        "name": "agent-machine",
+        "org": "SourceOS-Linux",
+        "authority_role": "machine_local_ai_runtime",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:agent_machine",
+        "type": "capability",
+        "name": "agent_machine",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:agent_pod",
+        "type": "capability",
+        "name": "agent_pod",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:inference_provider",
+        "type": "capability",
+        "name": "inference_provider",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:model_residency",
+        "type": "capability",
+        "name": "model_residency",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:placement_fact",
+        "type": "capability",
+        "name": "placement_fact",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:agent_machine_receipt",
+        "type": "capability",
+        "name": "agent_machine_receipt",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SourceOS-Linux/TurtleTerm",
+        "type": "repo",
+        "name": "TurtleTerm",
+        "org": "SourceOS-Linux",
+        "authority_role": "trusted_terminal_workbench",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:trusted_terminal",
+        "type": "capability",
+        "name": "trusted_terminal",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:terminal_receipts",
+        "type": "capability",
+        "name": "terminal_receipts",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:agent_gateway",
+        "type": "capability",
+        "name": "agent_gateway",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:skill_manifests",
+        "type": "capability",
+        "name": "skill_manifests",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SourceOS-Linux/BearBrowser",
+        "type": "repo",
+        "name": "BearBrowser",
+        "org": "SourceOS-Linux",
+        "authority_role": "governed_browser_runtime",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:human_secure_browser",
+        "type": "capability",
+        "name": "human_secure_browser",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:agent_browser_runtime",
+        "type": "capability",
+        "name": "agent_browser_runtime",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:browser_policy_profiles",
+        "type": "capability",
+        "name": "browser_policy_profiles",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:browser_automation_surface",
+        "type": "capability",
+        "name": "browser_automation_surface",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SourceOS-Linux/agent-term",
+        "type": "repo",
+        "name": "agent-term",
+        "org": "SourceOS-Linux",
+        "authority_role": "terminal_native_operator_console",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:matrix_chatops",
+        "type": "capability",
+        "name": "matrix_chatops",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:operator_event_log",
+        "type": "capability",
+        "name": "operator_event_log",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:approval_threads",
+        "type": "capability",
+        "name": "approval_threads",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:agent_participant_registry",
+        "type": "capability",
+        "name": "agent_participant_registry",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SourceOS-Linux/sourceos-devtools",
+        "type": "repo",
+        "name": "sourceos-devtools",
+        "org": "SourceOS-Linux",
+        "authority_role": "sourceosctl_operator_cli",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:sourceosctl",
+        "type": "capability",
+        "name": "sourceosctl",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:dry_run_plans",
+        "type": "capability",
+        "name": "dry_run_plans",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:evidence_inspection",
+        "type": "capability",
+        "name": "evidence_inspection",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:guarded_local_execution",
+        "type": "capability",
+        "name": "guarded_local_execution",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SourceOS-Linux/sourceos-model-carry",
+        "type": "repo",
+        "name": "sourceos-model-carry",
+        "org": "SourceOS-Linux",
+        "authority_role": "on_device_ai_service_carry",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:signed_model_refs",
+        "type": "capability",
+        "name": "signed_model_refs",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:local_model_profiles",
+        "type": "capability",
+        "name": "local_model_profiles",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:model_cache_policy",
+        "type": "capability",
+        "name": "model_cache_policy",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:boot_release_bindings",
+        "type": "capability",
+        "name": "boot_release_bindings",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SourceOS-Linux/homebrew-tap",
+        "type": "repo",
+        "name": "homebrew-tap",
+        "org": "SourceOS-Linux",
+        "authority_role": "sourceos_homebrew_distribution",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:homebrew_formulae",
+        "type": "capability",
+        "name": "homebrew_formulae",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:install_surface",
+        "type": "capability",
+        "name": "install_surface",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SourceOS-Linux/librewolf-source-mirror",
+        "type": "repo",
+        "name": "librewolf-source-mirror",
+        "org": "SourceOS-Linux",
+        "authority_role": "browser_upstream_mirror",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:upstream_browser_source",
+        "type": "capability",
+        "name": "upstream_browser_source",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:browser_build_reference",
+        "type": "capability",
+        "name": "browser_build_reference",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SocioProphet/HolographMe",
+        "type": "repo",
+        "name": "HolographMe",
+        "org": "SocioProphet",
+        "authority_role": "self_owned_human_twin_governance",
+        "status": "active",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:human_twin_governance",
+        "type": "capability",
+        "name": "human_twin_governance",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:consent_policy",
+        "type": "capability",
+        "name": "consent_policy",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:capability_graph",
+        "type": "capability",
+        "name": "capability_graph",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:mission_fit_projection",
+        "type": "capability",
+        "name": "mission_fit_projection",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "repo:SocioProphet/smart-tree",
+        "type": "repo",
+        "name": "smart-tree",
+        "org": "SocioProphet",
+        "authority_role": "ai_friendly_repo_tree_inspection",
+        "status": "candidate",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:repo_tree_inspection",
+        "type": "capability",
+        "name": "repo_tree_inspection",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:mcp_tooling",
+        "type": "capability",
+        "name": "mcp_tooling",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:security_scan",
+        "type": "capability",
+        "name": "security_scan",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "id": "capability:context_compression",
+        "type": "capability",
+        "name": "context_compression",
+        "declared": true,
+        "verified": true
+      }
+    ],
+    "edges": [
+      {
+        "from": "repo:SocioProphet/socioprophet",
+        "to": "capability:web_portal",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/socioprophet",
+        "to": "capability:api",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/socioprophet",
+        "to": "capability:mcp_servers",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/workspace-inventory",
+        "to": "capability:repo_index",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/workspace-inventory",
+        "to": "capability:inventory_validation",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/workspace-inventory",
+        "to": "repo:SocioProphet/sociosphere",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/sociosphere",
+        "to": "capability:workspace_manifest",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/sociosphere",
+        "to": "capability:workspace_lock",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/sociosphere",
+        "to": "capability:runner_semantics",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/sociosphere",
+        "to": "repo:SocioProphet/workspace-inventory",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/sociosphere",
+        "to": "repo:SocioProphet/agentplane",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/sociosphere",
+        "to": "repo:SocioProphet/sourceos-spec",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SocioProphet/agentplane",
+        "to": "capability:bundle_execution",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/agentplane",
+        "to": "capability:evidence_artifacts",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/agentplane",
+        "to": "capability:replay",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/agentplane",
+        "to": "repo:SocioProphet/sociosphere",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/agentplane",
+        "to": "repo:SocioProphet/sourceos-spec",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SocioProphet/prophet-platform",
+        "to": "capability:platform_apps",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/prophet-platform",
+        "to": "capability:contracts",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/prophet-platform",
+        "to": "capability:telemetry",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/prophet-platform",
+        "to": "repo:SocioProphet/socioprophet-standards-storage",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/prophet-platform",
+        "to": "repo:SocioProphet/socioprophet-standards-knowledge",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/prophet-core-catalog",
+        "to": "capability:catalog",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/prophet-core-catalog",
+        "to": "capability:provenance_index",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/prophet-core-catalog",
+        "to": "repo:SocioProphet/gaia-world-model",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SocioProphet/prophet-core-catalog",
+        "to": "repo:SocioProphet/socioprophet-standards-storage",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/ontogenesis",
+        "to": "capability:capd:ontogenesis",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/socioprophet-standards-storage",
+        "to": "capability:schemas",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/socioprophet-standards-storage",
+        "to": "capability:evidence_contracts",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/socioprophet-standards-storage",
+        "to": "capability:control_plane_standards",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/socioprophet-standards-knowledge",
+        "to": "capability:knowledge_schemas",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/socioprophet-standards-knowledge",
+        "to": "capability:tritrpc_bindings",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/socioprophet-standards-knowledge",
+        "to": "capability:roundtrip_verifiers",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/socioprophet-standards-knowledge",
+        "to": "repo:SocioProphet/tritrpc",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/socioprophet-standards-knowledge",
+        "to": "repo:SocioProphet/socioprophet-standards-storage",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/tritrpc",
+        "to": "capability:transport",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/tritrpc",
+        "to": "capability:fixtures",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/tritrpc",
+        "to": "capability:framing",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/sourceos-a2a-mcp-bootstrap",
+        "to": "capability:carrier_verify",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/human-digital-twin",
+        "to": "capability:api:hdt",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/human-digital-twin",
+        "to": "capability:opa:policies",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/human-digital-twin",
+        "to": "capability:tritrpc:devine",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/cloudshell-fog",
+        "to": "capability:cloud_shell",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/cloudshell-fog",
+        "to": "capability:operator_gateway",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/cloudshell-fog",
+        "to": "repo:SocioProphet/agentplane",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/cloudshell-fog",
+        "to": "repo:SocioProphet/prophet-platform",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SociOS-Linux/SourceOS",
+        "to": "capability:substrate",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SociOS-Linux/SourceOS",
+        "to": "capability:truth_plane",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SociOS-Linux/SourceOS",
+        "to": "repo:SociOS-Linux/socios",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SociOS-Linux/SourceOS",
+        "to": "repo:SociOS-Linux/workstation-contracts",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SociOS-Linux/SourceOS",
+        "to": "repo:SociOS-Linux/sourceos-spec",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SociOS-Linux/socios",
+        "to": "capability:ci_cd",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SociOS-Linux/socios",
+        "to": "capability:build_automation",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SociOS-Linux/socios",
+        "to": "capability:catalogs",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SociOS-Linux/socios",
+        "to": "capability:signatures",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SociOS-Linux/socios",
+        "to": "repo:SociOS-Linux/SourceOS",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SociOS-Linux/socios",
+        "to": "repo:SociOS-Linux/workstation-contracts",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SociOS-Linux/socios",
+        "to": "repo:SociOS-Linux/sourceos-spec",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SociOS-Linux/socios",
+        "to": "repo:SociOS-Linux/sociosphere",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SociOS-Linux/workstation-contracts",
+        "to": "capability:lane_contracts",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SociOS-Linux/workstation-contracts",
+        "to": "capability:conformance",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SociOS-Linux/workstation-contracts",
+        "to": "repo:SociOS-Linux/SourceOS",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SociOS-Linux/workstation-contracts",
+        "to": "repo:SociOS-Linux/socios",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SociOS-Linux/workstation-contracts",
+        "to": "repo:SociOS-Linux/sociosphere",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SociOS-Linux/workstation-contracts",
+        "to": "repo:SociOS-Linux/sourceos-spec",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-spec",
+        "to": "capability:json_schemas",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-spec",
+        "to": "capability:openapi_patches",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-spec",
+        "to": "capability:asyncapi_patches",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-spec",
+        "to": "capability:semantic_overlay",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-machine",
+        "to": "capability:agent_machine",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-machine",
+        "to": "capability:agent_pod",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-machine",
+        "to": "capability:inference_provider",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-machine",
+        "to": "capability:model_residency",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-machine",
+        "to": "capability:placement_fact",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-machine",
+        "to": "capability:agent_machine_receipt",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-machine",
+        "to": "repo:SourceOS-Linux/sourceos-model-carry",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-machine",
+        "to": "repo:SourceOS-Linux/agentplane",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-machine",
+        "to": "repo:SourceOS-Linux/policy-fabric",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-machine",
+        "to": "repo:SourceOS-Linux/model-router",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-machine",
+        "to": "repo:SourceOS-Linux/sourceos-devtools",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/TurtleTerm",
+        "to": "capability:trusted_terminal",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/TurtleTerm",
+        "to": "capability:terminal_receipts",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/TurtleTerm",
+        "to": "capability:agent_gateway",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/TurtleTerm",
+        "to": "capability:skill_manifests",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/TurtleTerm",
+        "to": "repo:SourceOS-Linux/agent-term",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/TurtleTerm",
+        "to": "repo:SourceOS-Linux/sourceos-devtools",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/TurtleTerm",
+        "to": "repo:SourceOS-Linux/agent-machine",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/TurtleTerm",
+        "to": "repo:SourceOS-Linux/agentplane",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/TurtleTerm",
+        "to": "repo:SourceOS-Linux/policy-fabric",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/BearBrowser",
+        "to": "capability:human_secure_browser",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/BearBrowser",
+        "to": "capability:agent_browser_runtime",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/BearBrowser",
+        "to": "capability:browser_policy_profiles",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/BearBrowser",
+        "to": "capability:browser_automation_surface",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/BearBrowser",
+        "to": "repo:SourceOS-Linux/librewolf-source-mirror",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/BearBrowser",
+        "to": "repo:SourceOS-Linux/browser-use",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/BearBrowser",
+        "to": "repo:SourceOS-Linux/agentplane",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/BearBrowser",
+        "to": "repo:SourceOS-Linux/policy-fabric",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/BearBrowser",
+        "to": "repo:SourceOS-Linux/sourceos-shell",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-term",
+        "to": "capability:matrix_chatops",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-term",
+        "to": "capability:operator_event_log",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-term",
+        "to": "capability:approval_threads",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-term",
+        "to": "capability:agent_participant_registry",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-term",
+        "to": "repo:SourceOS-Linux/agent-registry",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-term",
+        "to": "repo:SourceOS-Linux/sociosphere",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-term",
+        "to": "repo:SourceOS-Linux/policy-fabric",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-term",
+        "to": "repo:SourceOS-Linux/agentplane",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-term",
+        "to": "repo:SourceOS-Linux/memory-mesh-upstream",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-term",
+        "to": "repo:SourceOS-Linux/sherlock-search",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/agent-term",
+        "to": "repo:SourceOS-Linux/holmes",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-devtools",
+        "to": "capability:sourceosctl",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-devtools",
+        "to": "capability:dry_run_plans",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-devtools",
+        "to": "capability:evidence_inspection",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-devtools",
+        "to": "capability:guarded_local_execution",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-devtools",
+        "to": "repo:SourceOS-Linux/sourceos-spec",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-devtools",
+        "to": "repo:SourceOS-Linux/sourceos-model-carry",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-devtools",
+        "to": "repo:SourceOS-Linux/agent-machine",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-devtools",
+        "to": "repo:SourceOS-Linux/TurtleTerm",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-devtools",
+        "to": "repo:SourceOS-Linux/BearBrowser",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-devtools",
+        "to": "repo:SourceOS-Linux/model-router",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-devtools",
+        "to": "repo:SourceOS-Linux/guardrail-fabric",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-model-carry",
+        "to": "capability:signed_model_refs",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-model-carry",
+        "to": "capability:local_model_profiles",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-model-carry",
+        "to": "capability:model_cache_policy",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-model-carry",
+        "to": "capability:boot_release_bindings",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-model-carry",
+        "to": "repo:SourceOS-Linux/model-router",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-model-carry",
+        "to": "repo:SourceOS-Linux/model-governance-ledger",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-model-carry",
+        "to": "repo:SourceOS-Linux/guardrail-fabric",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-model-carry",
+        "to": "repo:SourceOS-Linux/sourceos-spec",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-model-carry",
+        "to": "repo:SourceOS-Linux/sourceos-boot",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/sourceos-model-carry",
+        "to": "repo:SourceOS-Linux/agent-machine",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/homebrew-tap",
+        "to": "capability:homebrew_formulae",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/homebrew-tap",
+        "to": "capability:install_surface",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/homebrew-tap",
+        "to": "repo:SourceOS-Linux/TurtleTerm",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/homebrew-tap",
+        "to": "repo:SourceOS-Linux/BearBrowser",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/homebrew-tap",
+        "to": "repo:SourceOS-Linux/agent-machine",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/homebrew-tap",
+        "to": "repo:SourceOS-Linux/sourceos-devtools",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/librewolf-source-mirror",
+        "to": "capability:upstream_browser_source",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/librewolf-source-mirror",
+        "to": "capability:browser_build_reference",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SourceOS-Linux/librewolf-source-mirror",
+        "to": "repo:SourceOS-Linux/BearBrowser",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/HolographMe",
+        "to": "capability:human_twin_governance",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/HolographMe",
+        "to": "capability:consent_policy",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/HolographMe",
+        "to": "capability:capability_graph",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/HolographMe",
+        "to": "capability:mission_fit_projection",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/HolographMe",
+        "to": "repo:SocioProphet/human-digital-twin",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/HolographMe",
+        "to": "repo:SocioProphet/agent-registry",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SocioProphet/HolographMe",
+        "to": "repo:SocioProphet/policy-fabric",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SocioProphet/HolographMe",
+        "to": "repo:SocioProphet/model-governance-ledger",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SocioProphet/HolographMe",
+        "to": "repo:SocioProphet/alexandrian-academy",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SocioProphet/smart-tree",
+        "to": "capability:repo_tree_inspection",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/smart-tree",
+        "to": "capability:mcp_tooling",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/smart-tree",
+        "to": "capability:security_scan",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/smart-tree",
+        "to": "capability:context_compression",
+        "type": "provides",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/smart-tree",
+        "to": "repo:SocioProphet/workspace-inventory",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/smart-tree",
+        "to": "repo:SocioProphet/sociosphere",
+        "type": "related_to",
+        "declared": true,
+        "verified": true
+      },
+      {
+        "from": "repo:SocioProphet/smart-tree",
+        "to": "repo:SocioProphet/guardrail-fabric",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      },
+      {
+        "from": "repo:SocioProphet/smart-tree",
+        "to": "repo:SocioProphet/sourceos-devtools",
+        "type": "related_to",
+        "declared": true,
+        "verified": false,
+        "to_unresolved": true
+      }
+    ]
+  },
+  "summary": {
+    "declared": {
+      "K": 109,
+      "E": 156
+    },
+    "verified": {
+      "K": 109,
+      "E": 120
+    },
+    "by_type": {
+      "repo_nodes": 27,
+      "capability_nodes": 82,
+      "provides_edges": 82,
+      "related_to_edges": 74
+    },
+    "unresolved_related_repos": [
+      "repo:SocioProphet/sourceos-spec",
+      "repo:SocioProphet/sourceos-spec",
+      "repo:SocioProphet/gaia-world-model",
+      "repo:SociOS-Linux/sourceos-spec",
+      "repo:SociOS-Linux/sourceos-spec",
+      "repo:SociOS-Linux/sociosphere",
+      "repo:SociOS-Linux/sociosphere",
+      "repo:SociOS-Linux/sourceos-spec",
+      "repo:SourceOS-Linux/agentplane",
+      "repo:SourceOS-Linux/policy-fabric",
+      "repo:SourceOS-Linux/model-router",
+      "repo:SourceOS-Linux/agentplane",
+      "repo:SourceOS-Linux/policy-fabric",
+      "repo:SourceOS-Linux/browser-use",
+      "repo:SourceOS-Linux/agentplane",
+      "repo:SourceOS-Linux/policy-fabric",
+      "repo:SourceOS-Linux/sourceos-shell",
+      "repo:SourceOS-Linux/agent-registry",
+      "repo:SourceOS-Linux/sociosphere",
+      "repo:SourceOS-Linux/policy-fabric",
+      "repo:SourceOS-Linux/agentplane",
+      "repo:SourceOS-Linux/memory-mesh-upstream",
+      "repo:SourceOS-Linux/sherlock-search",
+      "repo:SourceOS-Linux/holmes",
+      "repo:SourceOS-Linux/model-router",
+      "repo:SourceOS-Linux/guardrail-fabric",
+      "repo:SourceOS-Linux/model-router",
+      "repo:SourceOS-Linux/model-governance-ledger",
+      "repo:SourceOS-Linux/guardrail-fabric",
+      "repo:SourceOS-Linux/sourceos-boot",
+      "repo:SocioProphet/agent-registry",
+      "repo:SocioProphet/policy-fabric",
+      "repo:SocioProphet/model-governance-ledger",
+      "repo:SocioProphet/alexandrian-academy",
+      "repo:SocioProphet/guardrail-fabric",
+      "repo:SocioProphet/sourceos-devtools"
+    ],
+    "unverified_repos": []
+  }
+}
